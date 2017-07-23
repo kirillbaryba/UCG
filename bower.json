@@ -11,16 +11,10 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "normalize.css": "*",
     "jquery": "2.*"
   },
   "devDependencies": {
-    "bootstrap-datepicker": "^1.7.0",
-    "bootstrap": "^3.3.7",
     "components-font-awesome": "^4.7.0",
-    "gray": "^1.6.0",
-    "select2": "^4.0.3",
-    "jquery-sticky": "sticky#^1.0.4",
-    "jquery-mask-plugin": "jquery-mask#^1.14.11"
+    "bootstrap-grid-sass": "bootstrap-grid-only-sass#*"
   }
 }
