@@ -1,7 +1,7 @@
-
 $btn-color: $text-color-secondary;
 $btn-bg-color: $color-default;
-$btn-border-color: $text-color-secondary;
+$btn-box-shadow: 0 0 20px 1px rgba(1, 105, 180, 0.5);
+$btn-border-color: #cccccc;
 $btn-border: 2px solid;
 $btn-padding-vertical: 7px;
 $btn-padding-horizontal: 35px;
@@ -15,8 +15,13 @@ $btn-border-radius: 30px;
 	text-align: center;
 	border: $btn-border $btn-border-color;
 	text-decoration: none;
+	font-weight: 600;
 	@include button-size($btn-padding-vertical, $btn-padding-horizontal, $btn-font-size, $btn-line-height, $btn-border-radius);
 	&-default{
-		@include button-outline($btn-color, $btn-bg-color, $btn-border-color)
+		@include button-outline($btn-color, transparent, $btn-border-color);
+		&:hover{
+			@include button-variant($color-default, $color-secondary, transparent);
+			@include box-shadow($btn-box-shadow);
+		}
 	}
 }
