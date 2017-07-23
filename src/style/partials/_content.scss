@@ -1,0 +1,45 @@
+
+.photo{
+    position: relative;
+    height: calc(100vh - 90px);
+    background: url('/img/header-bg.jpg') center center fixed no-repeat;
+    background-size: cover;
+}
+
+.main{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    &__content{
+        flex: 1;
+    }
+}
+
+
+// photo-block
+.tagline{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &__head, &__subhead{
+        color: #1be7e8;
+        text-transform: uppercase;
+    }
+    &__head{
+        margin: 0;
+        font-size: 60px;
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: 4px;
+    }
+    &__subhead{
+        margin: 0;
+        font-size: 24px;
+        line-height: 1.2;
+        letter-spacing: 1.1px;
+        font-weight: 400;
+    }
+    &__btn{
+        margin-top: 35px;
+    }
+}

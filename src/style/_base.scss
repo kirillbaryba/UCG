@@ -1,16 +1,55 @@
-// custom fonts
-$font-family-Raleway: 'Raleway', sans-serif;
-$font-family-Montserrat: 'Montserrat', sans-serif;
+//
+// Base
+// --------------------------------------------------
 
-// base font style
-$base-font-size: 18px;
-$base-line-height: 1.667;
-$base-font-family: $font-family-Raleway;
-$base-font-style: normal;
-$base-font-weight: normal;
+// Reset the box-sizing
+
+* {
+	@include box-sizing(border-box);
+}
+*:before,
+*:after {
+	@include box-sizing(border-box);
+}
+
+// Body reset
+
+html {
+	font-size: 10px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+	@include font-type($base-font-family, $base-font-size, $base-font-weight);
+}
+
+// Reset fonts for relevant elements
+
+input,
+button,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
 
 
-$base-bg: $color-light-pink;
-$base-text-color: $color-dark-blue;
-$base-link-color: $color-blue;
-$base-link-color_hover: $color-dark-blue;
+// Links
+
+a {
+	@include links($base-link-color, $base-link-color-visited, $base-link-color-hover, $base-link-color-active, $base-link-decoration-hover);
+	@include transition($base-transition);
+}
+
+// Figures
+
+figure {
+	margin: 0;
+}
+
+// Images
+
+img {
+	vertical-align: middle;
+}

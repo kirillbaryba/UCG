@@ -1,19 +1,17 @@
 /*
-* Custom
+* main
 */
+@import "mixins";
+@import "libs";
+
 @import "variables";
 @import "normalize";
+
 @import "base";
-
-@import "mixins/breakpoints";
-@import "mixins/grid";
-@import "functions/breakpoints";
-
-@import "partials/libs-edit";
+@import "type";
+@import "partials/btn";
 @import "partials/head";
 @import "partials/content";
 @import "partials/footer";
-@import "partials/responsive";
 
-
-
+@import "components/navbar-toggle";

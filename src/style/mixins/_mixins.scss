@@ -1,0 +1,487 @@
+//font-type
+@mixin font-type($font-family, $font-size, $font-weight: normal) {
+	font-family: $font-family;
+	font-size: $font-size;
+	font-weight: $font-weight;
+}
+
+//font weight mixin
+@mixin font-weight($weight) {
+	$weights: (
+			thin: 100,
+			extra-light: 200,
+			ultra-light: 200,
+			light: 300,
+			normal: 400,
+			book: 400,
+			regular: 400,
+			medium: 500,
+			semi-bold: 600,
+			demi-bold: 600,
+			bold: 700,
+			extra-bold: 800,
+			ultra-bold: 900,
+			heavy: 900,
+			black: 900,
+			ultra: 900,
+			ultra-black: 900,
+			extra-ultra: 900
+	);
+
+	$output: $weight;
+	@if map-has-key($weights, $weight) {
+		$output: map-get($weights, $weight);
+	}
+	font-weight: $output;
+}
+
+/*usage font-weight*/
+.w100 {
+	@include font-weight(thin);
+}
+.w200 {
+	@include font-weight(extra-light);
+}
+.w300 {
+	@include font-weight(light);
+}
+.w400 {
+	@include font-weight(book);
+}
+.w500 {
+	@include font-weight(medium);
+}
+.w600 {
+	@include font-weight(semi-bold);
+}
+.w700 {
+	@include font-weight(bold);
+}
+.w800 {
+	@include font-weight(extra-bold);
+}
+.w900 {
+	@include font-weight(ultra-bold);
+}
+
+//vendor-prefix
+@mixin prefix($property, $parameters...) {
+	@each $prefix in -webkit-, -moz-, -ms-, -o-, "" {
+		#{$prefix}#{$property}: $parameters;
+	}
+}
+
+//button-variant
+@mixin button-variant($color, $background, $border) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+
+	&:focus,
+	&.focus {
+		color: $color;
+		background-color: darken($background, 10%);
+		border-color: darken($border, 25%);
+	}
+	&:hover {
+		color: $color;
+		background-color: darken($background, 10%);
+		border-color: darken($border, 12%);
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		color: $color;
+		background-color: darken($background, 10%);
+		border-color: darken($border, 12%);
+
+		&:hover,
+		&:focus,
+		&.focus {
+			color: $color;
+			background-color: darken($background, 17%);
+			border-color: darken($border, 25%);
+		}
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&:hover,
+		&:focus,
+		&.focus {
+			background-color: $background;
+			border-color: $border;
+		}
+	}
+
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+	padding: $padding-vertical $padding-horizontal;
+	font-size: $font-size;
+	line-height: $line-height;
+	border-radius: $border-radius;
+}
+
+//button-outline
+@mixin button-outline($color, $background, $border) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+	&:focus,
+	&.focus {
+		color: darken($color, 25%);
+		//background-color: darken($background, 10%);
+		background-color: transparent;
+		border-color: darken($border, 25%);
+	}
+	&:hover {
+		color: darken($color, 12%);
+		//background-color: darken($background, 10%);
+		background-color: transparent;
+		border-color: darken($border, 12%);
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		color: darken($color, 12%);
+		//background-color: darken($background, 10%);
+		background-color: transparent;
+		border-color: darken($border, 12%);
+		&:hover,
+		&:focus,
+		&.focus {
+			color: darken($color, 25%);
+			//background-color: darken($background, 17%);
+			background-color: transparent;
+			border-color: darken($border, 25%);
+		}
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&:hover,
+		&:focus,
+		&.focus {
+			color: darken($color, 50%);
+			background-color: $background;
+			border-color: $border;
+		}
+	}
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
+}
+
+//inverce btn
+@mixin button-inverse($color, $background, $border) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+	&:focus,
+	&.focus {
+		color: darken($color, 5%);
+		//background-color: darken($background, 10%);
+		background-color: transparent;
+		border-color: darken($border, 5%);
+	}
+	&:hover {
+		color: darken($color, 10%);
+		//background-color: darken($background, 10%);
+		background-color: transparent;
+		border-color: darken($border, 10%);
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		color: darken($color, 12%);
+		//background-color: darken($background, 10%);
+		background-color: transparent;
+		border-color: darken($border, 12%);
+		&:hover,
+		&:focus,
+		&.focus {
+			color: darken($color, 12%);
+			//background-color: darken($background, 17%);
+			background-color: transparent;
+			border-color: darken($border, 12%);
+		}
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&:hover,
+		&:focus,
+		&.focus {
+			color: darken($color, 50%);
+			background-color: $background;
+			border-color: $border;
+		}
+	}
+	.badge {
+		color: $background;
+		background-color: $color;
+	}
+}
+
+//link-variant btn
+@mixin button-link-variant($color) {
+	color: $color;
+	&:focus,
+	&.focus {
+		color: darken($color, 5%);
+	}
+	&:hover {
+		color: darken($color, 10%);
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		color: darken($color, 12%);
+		&:hover,
+		&:focus,
+		&.focus {
+			color: darken($color, 12%);
+		}
+	}
+	&:active,
+	&.active,
+	.open > &.dropdown-toggle {
+		background-image: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&:hover,
+		&:focus,
+		&.focus {
+			color: darken($color, 50%);
+		}
+	}
+	.badge {
+		color: $color;
+	}
+}
+
+//Links Mixin
+@mixin links ($link, $visited, $hover, $active, $bordered) {
+	& {
+		color: $link;
+		text-decoration: $bordered;
+		//@include transition(all ease .3s);
+		&:visited {
+			color: $visited;
+		}
+		&:hover {
+			color: $hover;
+			text-decoration: $bordered;
+		}
+		&:active, &:focus {
+			color: $active;
+			text-decoration: $bordered;
+		}
+	}
+}
+
+//triangles
+@mixin triangle($direction, $size: 0.375rem, $color: #222){
+	content: '';
+	display: block;
+	position: absolute;
+	height: 0; width: 0;
+	@if ($direction == 'up'){
+		border-bottom: $size solid $color;
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+	}
+	@else if ($direction == 'down'){
+		border-top: $size solid $color;
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+	}
+	@else if ($direction == 'left'){
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+	}
+	@else if ($direction == 'right'){
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	}
+}
+
+//placeholder-color
+@mixin placeholder-color($color) {
+	&:-moz-placeholder,
+	&::-moz-placeholder {
+		color: $color;
+		opacity: 1;
+	}
+
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+}
+
+//vertical-inline
+@mixin vertical-inline {
+	font-size: 0;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		width: 0;
+		height: 100%;
+	}
+}
+
+//https://css-tricks.com/snippets/sass/centering-mixin/
+//absolute centering v1
+@mixin centered($horizontal: true, $vertical: true) {
+	position: absolute;
+	@if ($horizontal and $vertical) {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	} @else if ($horizontal) {
+		left: 50%;
+		transform: translate(-50%, 0);
+	} @else if ($vertical) {
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+}
+
+//absolute centering v2
+@mixin absolutecenter($axis: "both"){
+	position:absolute;
+	@if $axis == "y"{
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	@if $axis == "x"{
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@if $axis == "both"{
+		top:50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+	}
+}
+
+//counter increment
+@mixin counter($var) {
+	counter-reset: $var;
+
+	& > li:before {
+		content: counter($var);
+		counter-increment: $var;
+	}
+}
+
+// generic transform
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+// rotate
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+// skew
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+@mixin transform-origin ($origin) {
+	-moz-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+	transform-origin: $origin;
+}
+
+//clearfix
+@mixin clearfix {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+//retinaImage
+@mixin retinaImage($src,$width: 100%) {
+	@media (min--moz-device-pixel-ratio: 1.5),
+	(-o-min-device-pixel-ratio: 3/2),
+	(-webkit-min-device-pixel-ratio: 1.5),
+	(min-device-pixel-ratio: 1.5),
+	(min-resolution: 144dpi),
+	(min-resolution: 1.5dppx) {
+		background-image: url(#{$src});
+		background-size: $width;
+	}
+}
+
+//retinaOnly
+@mixin retinaOnly() {
+	@media (min--moz-device-pixel-ratio: 1.5),
+	(-o-min-device-pixel-ratio: 3/2),
+	(-webkit-min-device-pixel-ratio: 1.5),
+	(min-device-pixel-ratio: 1.5),
+	(min-resolution: 144dpi),
+	(min-resolution: 1.5dppx) { @content; }
+}
+
+// Sizing shortcuts
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin square($size) {
+	@include size($size, $size);
+}
+
