@@ -1,0 +1,63 @@
+$categories-bg: $color-default;
+
+.categories{
+	@include make-row();
+	&__list{
+		position: relative;
+		@extend .text-center;
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0;
+		justify-content: space-between;
+		margin-top: -170px;
+		margin-bottom: 170px;
+		@include mq-down(sm){
+			justify-content: center;
+		}
+		@include mq-down(md){
+			justify-content: space-between;
+		}
+	}
+	&__item{
+		padding: 70px 30px 30px 30px;
+		display: flex;
+		flex-direction: column;
+		background: $categories-bg;
+		@include mq-down(sm) {
+			flex-basis: 300px;
+		}
+		@include mq-only(md) {
+			//flex-basis: 48%;
+		}
+		@include mq-up(lg) {
+			width: 370px;
+		}
+		.icon{
+			flex-grow: 1;
+			justify-content: center;
+			align-items: center;
+			display: flex;
+		}
+	}
+	&__name{
+		color: $text-color-default;
+		font-weight: bold;
+	}
+	&__text{
+
+	}
+	&__btn{
+		align-self: center;
+	}
+	&__text + &__btn{
+		margin-top: 55px;
+		margin-bottom: 40px;
+	}
+
+}
+
+.info{
+	background: $body-bg-default;
+	position: relative;
+	z-index: 2;
+}

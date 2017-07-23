@@ -1,10 +1,12 @@
+// base icon path
+$icon-font-path: '../fonts/';
 // base template colors
 $color-default: #ffffff;
 $color-primary: #f5f5f5;
 $color-secondary: #0169b4;
 
 //body default theme
-$body-bg-default: $color-default;
+$body-bg-default: $color-primary;
 
 // base text colors
 $text-color-default: #666666;
@@ -29,6 +31,8 @@ $base-heading-color: $color-primary;
 $font-size-h1: 50px;
 $font-size-h2: 48px;
 $font-size-h3: 30px;
+
+$base-padding: 20px;
 //$font-size-h4: 26px;
 //$font-size-h5: 20px;
 //$font-size-h6: 14px;

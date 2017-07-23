@@ -1,6 +1,7 @@
+$footer-bg-color: $color-secondary;
 .footer{
     padding: 58px 0 0;
-    background: #2b2446;
+    background: $footer-bg-color;
     &-wrap{
         padding-bottom: 14px;
         font-size: 0;
@@ -45,7 +46,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 19px;
-        color: #2b2446;
+        color: #fff;
     }
     &-contacts{
         &__btn{
@@ -66,7 +67,6 @@
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
-                background: #fff;
             }
         }
     }
