@@ -7,11 +7,14 @@
 @import "variables";
 @import "normalize";
 
+@import "partials/navbar";
 @import "base";
 @import "type";
-@import "partials/btn";
 @import "partials/head";
+@import "partials/btn";
 @import "partials/content";
 @import "partials/footer";
 
 @import "components/navbar-toggle";
+
+

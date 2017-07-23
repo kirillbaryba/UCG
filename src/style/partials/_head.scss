@@ -1,100 +1,21 @@
-header{
-    position: relative;
-    width: 100% !important;
-    top: 0;
-    z-index: 1 !important;
-    background: #fff;
-    overflow: hidden;
-}
+$header-vh: 90px;
+$header-position: absolute;
+$header-position-vh: 125px;
 
-.head{
-    &-bars{
-        display: none;
-    }
-    &-logo{
-        padding-top: 16px;
-        display: inline-block;
-    }
-    &-actions{
-        display: block;
-        font-size: 0;
-        padding: 23px 0;
-    }
-    &-btns{
-        display: inline-block;
-    }
-    &-menu{
-        vertical-align: middle;
-        display: inline-block;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        font-size: 0;
-        &-item{
-            display: inline-block;
-            margin-right: 24px;
-            &:last-child{
-                margin-right: 30px;
-            }
-            &__link{
-                letter-spacing: 1px;
-                line-height: 44px;
-                font-size: 16px;
-                font-weight: 400;
-                text-transform: uppercase;
-                color: #2b2446;
-                text-decoration: none;
-                &_active,
-                &:hover{
-                    text-decoration: none;
-                    color: #9785e7;
-                }
-            }
-        }
-    }
-    &-login{
-        vertical-align: middle;
-        margin-right: 32px;
-    }
-    &-lang{
-        vertical-align: middle;
-        background: none;
-        border: none;
-        outline: none;
-        padding: 0;
-    }
-}
+.header{
+	$this: &;
+	background-color: transparent;
+	position: $header-position;
+	top: $header-position-vh;
+	width: 100%;
+	z-index: 2;
+	&.js-#{$this}{
 
-.languages{
-    width: 100%;
-    position: absolute;
-    top: 90px;
-    display: block;
-    background-color: #eee;
-    &-list{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        text-align: center;
-        &__item{
-            padding: 0 50px;
-            display: inline-block;
-        }
-    }
 }
-
-.language{
-    display: inline-block;
-    line-height: 82px;
-    color: #2b2446;
-    font-size: 16px;
-    font-weight: 400;
-    &:hover{
-        color: #2b2446;
-        text-decoration: none;
-    }
-    &__flag{
-        margin-left: 12px;
-        display: inline-block;
-    }
+	&__container{
+		height: $header-vh;
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+	}
 }

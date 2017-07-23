@@ -21,16 +21,10 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    &__head, &__subhead{
-        color: #1be7e8;
-        text-transform: uppercase;
-    }
-    &__head{
+    &__title{
         margin: 0;
-        font-size: 60px;
-        line-height: 1.2;
-        font-weight: 700;
-        letter-spacing: 4px;
+        @include font-type($base-font-family, $font-size-h2, $header-title-line-height, 100);
+        @extend .text-uppercase;
     }
     &__subhead{
         margin: 0;

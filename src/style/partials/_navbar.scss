@@ -1,0 +1,88 @@
+$navbar-logo-text-size: 34px;
+$navbar-link-font-size: 16px;
+$navbar-link-line-height: 1.875;
+
+.navbar-logo {
+	flex-grow: 1;
+	&__link {
+		display: inline-block;
+		color: $color-default;
+		@include links($color-default, $base-link-color-visited, $base-link-color-hover, $base-link-color-active, $base-link-decoration-hover);
+	}
+	&__img {
+
+	}
+	&__text {
+		@extend .text-uppercase;
+		@include font-type($font-family-Montserrat,$navbar-link-font-size, null, $base-font-weight);
+		vertical-align: middle;
+		font-size: $navbar-logo-text-size;
+		color: $color-default;
+	}
+}
+
+
+
+.navbar-nav {
+	display: flex;
+	flex-wrap: wrap;
+	@include font-type($font-family-Montserrat,$navbar-link-font-size, null, $base-font-weight);
+	&__link {
+		align-self: center;
+		text-shadow: none;
+		position: relative;
+		@extend .text-uppercase;
+		//font-size: $navbar-link-font-size;
+		@include links($color-default, null, null, null, none);
+		&--is-active{
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 2px;
+				background: #fff;
+			}
+		}
+		&--data-hover {
+			&:hover, &:focus {
+				&:before {
+					opacity: 0;
+					@include transform(translateY(-2px));
+				}
+			}
+			&:hover, &:focus {
+				&:after {
+					opacity: 1;
+					@include transform(translateY(0px));
+				}
+			}
+
+			&:before {
+				color: #fff;
+				content: attr(data-hover);
+				position: absolute;
+				@include transition(transform 0.3s, opacity 0.3s);
+				pointer-events: none;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 2px;
+				background: #fff;
+				opacity: 0;
+				@include transform(translateY(5px));
+				@include transition(transform 0.3s, opacity 0.3s);
+				pointer-events: none;
+			}
+
+		}
+	}
+	&__link + &__link {
+		margin-left: 60px;
+	}
+}
