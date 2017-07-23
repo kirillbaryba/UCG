@@ -35,7 +35,7 @@ $font-size-h3: 30px;
 $base-padding: 20px;
 //$font-size-h4: 26px;
 //$font-size-h5: 20px;
-//$font-size-h6: 14px;
+$font-size-h6: 14px;
 
 //base body
 $base-bg: $body-bg-default;
@@ -47,6 +47,11 @@ $base-link-color-hover: lighten($color-secondary, 10%);
 $base-link-color-visited: $base-link-color;
 $base-link-color-active: $base-link-color-hover;
 $base-link-decoration-hover: none;
+
+//footer link style
+$footer-link-color: $color-default;
+$footer-link-color-hover: lighten($color-secondary, 50%);
+$footer-link-color-active: $footer-link-color-hover;
 
 //base transition
 $base-transition: all ease 0.3s;

@@ -3,7 +3,7 @@
 //init flickity carusel
     $('.carusel').flickity({
         // options
-        autoPlay: true,
+        autoPlay: 5000,
         pauseAutoPlayOnHover: false,
         cellAlign: 'left',
         wrapAround: true,

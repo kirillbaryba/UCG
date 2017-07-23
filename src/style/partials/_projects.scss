@@ -5,8 +5,9 @@
 	//justify-content: space-between;
 	//align-items: center;
 
-	&__item{
-		width: 50%;
+	&__title{
+		margin-bottom: $base-padding * 3;
+		@include make-row();
 	}
 	&__text{
 		padding-right: 10%;
