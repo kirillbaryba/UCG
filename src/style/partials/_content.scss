@@ -18,11 +18,10 @@
 
 // photo-block
 .tagline{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    @include centered(false, true);
     &__title{
         margin: 0;
+        color: $color-default;
         @include font-type($base-font-family, $font-size-h2, $header-title-line-height, 100);
         @extend .text-uppercase;
     }

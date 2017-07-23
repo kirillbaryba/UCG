@@ -15,25 +15,11 @@
 // Body reset
 
 html {
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	/* Adjust font size */
-	font-size: 100%;
-	-webkit-text-size-adjust: 100%;
-	/* Font varient */
-	font-variant-ligatures: none;
-	-webkit-font-variant-ligatures: none;
-	/* Smoothing */
-	text-rendering: optimizeLegibility;
-	-moz-osx-font-smoothing: grayscale;
-	font-smoothing: antialiased;
-	-webkit-font-smoothing: antialiased;
-	text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+	@include font-rendering;
 }
 
 body {
 	@include font-type($base-font-family, $base-font-size, $base-line-height, $base-font-weight);
-	//-webkit-font-smoothing: antialiased;
-	//-moz-osx-font-smoothing: grayscale;
 }
 
 // Reset fonts for relevant elements

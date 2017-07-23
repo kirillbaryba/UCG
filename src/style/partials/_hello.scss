@@ -1,0 +1,21 @@
+.hello{
+	@include make-row();
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__item{
+		width: 50%;
+	}
+	&__text{
+		padding-right: 10%;
+	}
+	&__text + &__btn{
+		margin-top: $base-padding * 1.5;
+	}
+	&__img{
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+}

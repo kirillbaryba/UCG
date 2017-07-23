@@ -1,25 +1,20 @@
-(function(){
+(function () {
 
-    var header_height = $('header').height();
-    var header = $('header');
-
-
-
-    function scrollTop(header_height){
-        $('html, body').animate({
-            scrollTop: $("#how-it-works").offset().top - header_height
-        }, 500);
-    }
-
-
-    $(window).on('resize', function(){
-
-    });
-
-
-    $('.scrolldown a').click(function(){
-        scrollTop(header_height);
-        return false;
+//init flickity carusel
+    $('.carusel').flickity({
+        // options
+        autoPlay: true,
+        pauseAutoPlayOnHover: false,
+        cellAlign: 'left',
+        wrapAround: true,
+        pageDots: false,
+        contain: true,
+        arrowShape: {
+            x0: 0,
+            x1: 70, y1: 50,
+            x2: 70, y2: 0,
+            x3: 70
+        }
     });
 
 })();

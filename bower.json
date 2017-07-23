@@ -11,7 +11,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "jquery": "2.*"
+    "jquery": "2.*",
+    "flickity": "^2.0.9"
   },
   "devDependencies": {
     "components-font-awesome": "^4.7.0",
