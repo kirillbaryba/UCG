@@ -59,6 +59,11 @@ $categories-title-line-height: 1.133;
 			display: flex;
 		}
 	}
+	&__item + &__item{
+		@include mq-down(xs) {
+			margin-top: $grid-gutter-width;
+		}
+	}
 	&__name{
 		color: $text-color-default;
 		font-weight: bold;

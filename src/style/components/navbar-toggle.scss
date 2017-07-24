@@ -14,6 +14,9 @@ $toggle-line-color: $color-default;
 	@include mq-down(lg) {
 		display: block;
 	}
+	@include mq-down(xs) {
+		top: 25px;
+	}
 	span {
 		&:after,
 		&:before {

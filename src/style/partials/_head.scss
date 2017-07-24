@@ -21,6 +21,9 @@ $header-position-vh: 125px;
 			.navbar-logo{
 				position: absolute;
 				width: 100%;
+				text-align: left;
+				//fix logo
+				padding-left: $base-padding * 1.5;
 			}
 			#{$this}__container{
 				display: flex;
@@ -28,10 +31,6 @@ $header-position-vh: 125px;
 				height: 100%;
 				width: 100%;
 				padding: 0;
-			}
-
-			.navbar-logo {
-				text-align: center;
 			}
 		}
 	}

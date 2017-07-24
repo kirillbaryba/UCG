@@ -12,6 +12,19 @@
     flex-direction: column;
     &__content{
         flex: 1;
+        @media screen and (max-height: 670px){
+            .header{
+                position: fixed;
+                top: 0;
+                &__container{
+                    height: 80px;
+                }
+                background-color: rgba(150, 178, 220, 0.3);
+                box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.3);
+                z-index: 3;
+                @include transition($base-transition);
+            }
+        }
     }
 }
 

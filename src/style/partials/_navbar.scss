@@ -1,13 +1,12 @@
 .navbar-logo {
 	flex-grow: 1;
+	@include mq-down(md) {
+		margin: $base-padding / 1.3 0;
+	}
 	&__link {
 		display: inline-block;
 		color: $color-default;
 		@include links($color-default, $base-link-color-visited, $base-link-color-hover, $base-link-color-active, $base-link-decoration-hover);
-		@include mq-down(lg) {
-			margin: $base-padding / 1.3 0;
-		}
-
 	}
 	&__img {
 	}
