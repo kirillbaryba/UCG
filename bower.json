@@ -15,7 +15,6 @@
     "flickity": "^2.0.9"
   },
   "devDependencies": {
-    "components-font-awesome": "^4.7.0",
-    "bootstrap-grid-sass": "bootstrap-grid-only-sass#*"
+    "components-font-awesome": "^4.7.0"
   }
 }

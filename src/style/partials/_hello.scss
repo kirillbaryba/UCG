@@ -1,14 +1,17 @@
 .hello{
-	@include make-row();
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
+	&__title{
+		margin-top: 0;
+	}
 	&__item{
 		width: 50%;
 	}
 	&__text{
 		padding-right: 10%;
+		color: $text-color-default;
+		@include font-weight(medium);
 	}
 	&__text + &__btn{
 		margin-top: $base-padding * 1.5;

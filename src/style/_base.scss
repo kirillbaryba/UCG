@@ -37,7 +37,6 @@ textarea {
 // Links
 
 a {
-	//@include links($base-link-color, $base-link-color-visited, $base-link-color-hover, $base-link-color-active, $base-link-decoration-hover);
 	@include transition($base-transition);
 }
 

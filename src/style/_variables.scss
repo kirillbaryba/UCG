@@ -48,6 +48,12 @@ $base-link-color-visited: $base-link-color;
 $base-link-color-active: $base-link-color-hover;
 $base-link-decoration-hover: none;
 
+//navbar item style
+$navbar-logo-text-size: 34px;
+$navbar-link-font-size: 16px;
+$navbar-link-line-height: 1.875;
+
+
 //footer link style
 $footer-link-color: $color-default;
 $footer-link-color-hover: lighten($color-secondary, 50%);
@@ -66,15 +72,15 @@ $grid-breakpoints: (
 		md: 768px,
 		lg: 992px,
 		xl: 1200px,
-		xxl: 1800px
+		//xxl: 1700px
 ) !default;
 
 $container-max-widths: (
 		sm: 540px,
 		md: 720px,
 		lg: 960px,
-		xl: 1140px,
-		xxl: 1700px
+		xl: 1170px,
+		//xxl: 1680px
 ) !default;
 
 // Number of columns in the grid.
@@ -82,3 +88,29 @@ $grid-columns: 12 !default;
 
 // Padding between columns. Gets divided in half for the left and right.
 $grid-gutter-width: 30px !default;
+
+/* GLOBAL */
+
+.overflow {
+	overflow: hidden;
+}
+
+.container {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	@include make-container-max-widths();
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.section {
+	flex-grow: 1;
+}
+
+.hidden {
+	display: none;
+}

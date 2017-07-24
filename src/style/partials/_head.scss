@@ -9,6 +9,12 @@ $header-position-vh: 125px;
 	top: $header-position-vh;
 	width: 100%;
 	z-index: 2;
+	@include mq-down(lg) {
+		top: 0;
+	}
+	/*@include mq-only(md) {
+		top: 0;
+	}*/
 	&.js-#{$this}{
 
 }

@@ -17,4 +17,10 @@
         }
     });
 
+    //toogle-collapse menu
+    $('.navbar-toggle').on('click', function () {
+        $(this).toggleClass('on');
+        $(this).closest('.header').find('.navbar-nav').toggleClass('is-visible');
+    });
+
 })();

@@ -2,7 +2,8 @@ $categories-bg: $color-default;
 $categories-title-line-height: 1.133;
 
 .categories{
-	@include make-row();
+	display: flex;
+	flex-direction: column;
 	&__list{
 		position: relative;
 		@extend .text-center;
@@ -11,13 +12,17 @@ $categories-title-line-height: 1.133;
 		padding: 0;
 		justify-content: space-between;
 		margin-top: -205px;
-		margin-bottom: 160px;
+		margin-bottom: 0;
+		@include mq-down(xs) {
+			flex-basis: 100%;
+		}
 		@include mq-down(sm){
 			justify-content: center;
 		}
-		@include mq-down(md){
+		@include mq-down(lg){
 			justify-content: space-between;
 		}
+
 	}
 	&__item{
 		padding: 70px 20px 30px;
@@ -33,7 +38,13 @@ $categories-title-line-height: 1.133;
 			flex-basis: 300px;
 		}
 		@include mq-only(md) {
-			//flex-basis: 48%;
+			flex-basis: 48%;
+			margin-bottom: $base-padding * 1.5;
+			align-items: center;
+			justify-content: center;
+		}
+		@include mq-up(lg) {
+			flex-basis: 31%;
 		}
 		@include mq-up(lg) {
 			width: 370px;
@@ -70,4 +81,8 @@ $categories-title-line-height: 1.133;
 	background: $body-bg-default;
 	position: relative;
 	z-index: 2;
+}
+
+.works + .news, .news + .projects{
+	padding-top:  $base-padding * 8;
 }
