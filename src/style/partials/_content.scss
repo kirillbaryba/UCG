@@ -19,20 +19,22 @@
 // photo-block
 .tagline{
     @include centered(false, true);
+    @include mq-only(lg){
+        top: 40%;
+    }
+    @include mq-down(xs){
+        top: 35%;
+    }
     &__title{
         margin: 0;
         color: $color-default;
         @include font-type($base-font-family, $font-size-h2, $header-title-line-height, 100);
         @extend .text-uppercase;
-    }
-    &__subhead{
-        margin: 0;
-        font-size: 24px;
-        line-height: 1.2;
-        letter-spacing: 1.1px;
-        font-weight: 400;
-    }
-    &__btn{
-        margin-top: 35px;
+        @include mq-only(sm){
+            font-size: $font-size-h2 / 1.5;
+        }
+        @include mq-down(xs){
+            font-size: $font-size-h2 / 2;
+        }
     }
 }

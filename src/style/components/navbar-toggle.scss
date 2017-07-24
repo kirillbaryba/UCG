@@ -3,9 +3,8 @@ $toggle-line-radius: 6px;
 $toggle-line-color: $color-default;
 
 /*-- toogle-menu animate--*/
-
 .navbar-toggle {
-	display: block;
+	display: none;
 	width: 35px;
 	height: 25px;
 	position: absolute;

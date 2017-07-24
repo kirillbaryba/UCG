@@ -16,12 +16,15 @@ $categories-title-line-height: 1.133;
 		@include mq-down(xs) {
 			flex-basis: 100%;
 		}
+		@include mq-only(md){
+			justify-content: space-around;
+		}
 		@include mq-down(sm){
 			justify-content: center;
 		}
-		@include mq-down(lg){
-			justify-content: space-between;
-		}
+		//@include mq-down(lg){
+		//	justify-content: space-between;
+		//}
 
 	}
 	&__item{
@@ -35,10 +38,10 @@ $categories-title-line-height: 1.133;
 			@include box-shadow(0 0 15px 0px rgba(107, 105, 105, 0.3));
 		}
 		@include mq-down(sm) {
-			flex-basis: 300px;
+			flex-basis: 100%;
 		}
 		@include mq-only(md) {
-			flex-basis: 48%;
+			flex-basis: 45%;
 			margin-bottom: $base-padding * 1.5;
 			align-items: center;
 			justify-content: center;
